@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowRxjsComponent implements OnInit {
 
-  showNumber: number = 0;
+
   myIp: string = "正在获取。。。";
   constructor() { }
 
