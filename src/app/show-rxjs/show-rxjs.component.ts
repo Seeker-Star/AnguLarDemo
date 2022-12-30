@@ -19,4 +19,18 @@ export class ShowRxjsComponent implements OnInit {
     });
   }
 
+  // @ts-ignore
+  getFiles(e){
+    const input = e.target
+    const reader = new FileReader()
+    reader.onload = (() => {
+      if(reader.result) {
+        const json = eval('(' + reader.result + ')')
+        console.log('测试', json.editorData)
+        // console.log("测试",JSON.parse(JSON.stringify(reader.result)))
+      }
+    })
+    reader.readAsText(input.files[0], 'utf-8')
+  }
+
 }
